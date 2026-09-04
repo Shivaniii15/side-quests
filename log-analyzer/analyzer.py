@@ -16,4 +16,6 @@ with open("Apache_2k.log", "r") as file:
             else:
                 hourly_counts[hour_key] = 1
 
-print(hourly_counts)
+for hour, count in sorted(hourly_counts.items()):
+    label = "error" if count == 1 else "errors"
+    print(f"{hour} - {count} {label}")
